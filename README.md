@@ -1,13 +1,13 @@
 # Zero-shot LLM-Assisted Expert Finding
 
-A comprehensive system for finding domain experts based on natural language queries using zero-shot learning with Large Language Models (LLMs), embeddings, and RDF knowledge graphs.
+A comprehensive system for finding academic experts based on natural language queries using zero-shot framework with Large Language Models (LLMs), embeddings, and RDF knowledge graphs.
 
 ## Overview
 
-This project implements an end-to-end expert finding pipeline that combines:
+This project implements an end-to-end academic expert finding pipeline that combines:
 - **Query Processing**: Extracting keywords from user queries using LLMs
-- **Document Retrieval**: Finding relevant papers using semantic similarity (Qwen embeddings)
-- **Document Reranking**: Using Qwen reranker model to score document relevance
+- **Document Retrieval**: Finding relevant papers using semantic similarity 
+- **Document Reranking**: Using reranker model to score document relevance
 - **Knowledge Graph Construction**: Building RDF-based knowledge graphs linking papers, authors, and topics
 - **Author Ranking**: Re-ranking candidate experts using LLM-based relevance assessment with graph context
 - **Evaluation**: Comprehensive metrics (MAP, MRR, NDCG, Precision) for ranking quality
@@ -26,7 +26,7 @@ This project implements an end-to-end expert finding pipeline that combines:
 ```
 ├── main.py                    # Main pipeline orchestrating the expert finding process
 ├── evaluation.py              # Evaluation metrics (MAP@K, MRR@K, NDCG@K, Precision@K)
-├── exp_filter_data.py         # Document retrieval and reranking using Qwen models
+├── exp_filter_data.py         # Document retrieval and reranking 
 ├── exp_knowledge_graph.py     # RDF knowledge graph construction and traversal
 ├── llama_config.json          # Configuration for LLaMA model
 └── README.md                  # This file
@@ -63,7 +63,7 @@ Implements standard IR evaluation metrics:
 - **Recall**: Global recall across all ground truth experts
 
 **Ground Truth Generation:**
-- `get_ground_truth_experts()`: Filters authors by topic tags and ranks by citation count
+- `get_ground_truth_experts()`: Filters authors by topic tags 
 
 ### 3. **exp_filter_data.py** - Document Retrieval & Reranking
 Handles document filtering, retrieval, and relevance scoring:
