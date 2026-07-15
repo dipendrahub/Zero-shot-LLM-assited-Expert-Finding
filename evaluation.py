@@ -5,7 +5,7 @@ from collections import defaultdict
 import logging
 logging.getLogger("transformers").setLevel(logging.ERROR)
 
-#Get Ground Truth Experts (filter authors with tag == query and rank by citations)
+#Get Ground Truth Experts (filter authors with tag == query)
 def get_ground_truth_experts(authors_df, query_tag, top_k):
     authors_df = authors_df.copy()
     authors_df["id"] = authors_df["id"].astype(int)  # match with expert_ids type 
@@ -25,10 +25,10 @@ def get_ground_truth_experts(authors_df, query_tag, top_k):
     matched_df = valid_df[valid_df['tags'].apply(match_tag)]
 
     # Sort by n_citation (descending)
-    ranked_df = matched_df.sort_values(by='n_citation', ascending=False)
+    # ranked_df = matched_df.sort_values(by='n_citation', ascending=False)
 
     # Get top_k author ids
-    ground_truth_ids = ranked_df['id'].tolist()#[:top_k]
+    ground_truth_ids = matched_df['id'].tolist()#[:top_k]
 
     return ground_truth_ids
 
