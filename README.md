@@ -215,8 +215,8 @@ The system builds on:
 
 ## License
 
-[Add your license here]
+N/A
 
 ## Contact
 
-[Add contact information]
+Anonymous N/A
